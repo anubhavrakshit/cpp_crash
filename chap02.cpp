@@ -56,5 +56,7 @@ int main()
     //Calculator calc = {Operation::Plus};
     Calculator calc;
     cout << "Calc ret = " << calc.calculate(10, 30) << endl;
+    char arr[]{"Anubhav"};
+    cout << arr << "\n";
     return 0;
 }
