@@ -12,20 +12,24 @@ public:
     int minPathSum(vector<vector<int>>& grid) {
         const int H = grid.size();
         const int W = grid[0].size();
+        // create dp to store min path sums from origin
         vector<vector<int>> dp(H, vector<int>(W));
 
+        // Only choice for Col 0 will be to go down from start, so we will pre-fill that
         // Pre fill col 0
         dp[0][0] = grid[0][0];
         for (int i = 1; i < H; i++)
         {
             dp[i][0] = dp[i - 1][0] + grid[i][0];
         }
+
+        // Only choice for Row 0 will be to go right from start, so we will pre-fill that
         // Pre fill row 0
         for (int j = 1; j < W; j++)
         {
             dp[0][j] = dp[0][j - 1] + grid[0][j];
         }
-
+        // Now the choice we have to make is to pick either top or the left path
         for (int  r = 1; r < H; r++) {
             for (int c = 1; c < W; c++) {
                 dp[r][c] = min(dp[r - 1][c], dp[r][c - 1]) + grid[r][c];
