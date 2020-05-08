@@ -11,7 +11,7 @@ public:
             return true;
         }
         int num_cord = coordinates.size();
-        auto slope = [&](vector<int> c1, vector<int> c2) { return ((double)(c1[1] - c2[1]) / (double)(c1[0] - c2[0]));};
+        auto slope = [&](vector<int> c1, vector<int> c2) {return (double)(c1[1] - c2[1]) / (double)(c1[0] - c2[0]);};
         const double s = slope(coordinates[1], coordinates[0]);
         for (int i = 2; i < num_cord; i++) {
             double this_slope = slope(coordinates[0], coordinates[i]);
@@ -24,10 +24,10 @@ public:
 };
 
 int main() {
-    vector<vector<int>> test{{1,1},{2,2},{3,4},{4,5},{5,6},{7,7}};
+    vector<vector<int>> coordinates{{1,1},{2,2},{3,4},{4,5},{5,6},{7,7}};
 
     Solution s;
 
-    cout << s.checkStraightLine(test);
+    cout << s.checkStraightLine(coordinates);
     return 0;
 }

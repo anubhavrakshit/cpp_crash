@@ -7,7 +7,9 @@ public:
     int maxSubArray(vector<int>& nums) {
         int globalMax, localMax;
         globalMax = localMax = nums[0];
-        
+
+       // kadanes algo:
+       // either the number should increase the sum of subarray or we reset the sum to the number 
         for (int i = 1; i < nums.size(); i++) {
             localMax = max(localMax + nums[i], nums[i]);
             if (localMax > globalMax) {

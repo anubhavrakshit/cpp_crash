@@ -61,7 +61,6 @@ int main()
     vector<int> prices;
     while (cin >> n)
     {
-        cout << n << "\n";
         prices.push_back(n);
     }
 
