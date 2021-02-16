@@ -4,6 +4,7 @@
 using namespace std;
 
 // Sword represents the position of the person holding the sword in the circle
+// Time Complexity O(n) {n + n/2 + n/4 ....+ 1} | Space Complexity O(n)
 int lastAlive(vector<int> &circle, int sword) {
     // Base condition: If a single person is alive we must stop recursion
     if (circle.size() == 1) {
