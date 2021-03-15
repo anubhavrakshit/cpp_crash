@@ -7,12 +7,10 @@ int dfs(vector<vector<int>> &arr, map<pair<int, int>, int> &memo, int r, int c)
 {
     int num_rows = arr.size();
     int num_cols = arr[0].size();
-    if (r < 0 || r >= num_rows || c < 0 || c >= num_cols)
-    {
+    if (r < 0 || r >= num_rows || c < 0 || c >= num_cols) {
         return 0;
     }
-    if (r == num_rows - 1 && c == num_cols - 1)
-    {
+    if (r == num_rows - 1 && c == num_cols - 1) {
         return 1;
     }
 
@@ -43,10 +41,8 @@ int main()
 
     int count = 1;
     map<pair<int, int> , int>  memo;
-    for (int i = 0; i < dim; i++)
-    {
-        for (int j = 0; j < dim; j++)
-        {
+    for (int i = 0; i < dim; i++) {
+        for (int j = 0; j < dim; j++) {
             arr[i][j] = count++;
         }
     }

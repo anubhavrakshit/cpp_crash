@@ -51,8 +51,7 @@ void print_spiral(vector<vector<int> > arr) {
 }
 
 
-int main()
-{
+int main() {
     vector<vector<int>> arr(3, vector<int>(3));
 
     int count = 1;
