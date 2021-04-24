@@ -20,12 +20,8 @@ int solve(vector<int> &A, vector<int> &B) {
             // at junction reset sums
             psuma = psumb = 0;
             // move forward and update path sums we need to account for the junction point
-            if (i < na) {
-                psuma += A[i++];
-            }
-            if (j < nb) {
-                psumb += B[j++];
-            }
+            psuma += A[i++];
+            psumb += B[j++];
         } else {
             psumb += B[j++];
         }
