@@ -5,51 +5,45 @@ using namespace std;
 
 int solve(vector<int> &A, vector<int> &B) {
 
-    int mps{0}; // max path sum
+    int mpsum{0}; // max path sum
     
     int na = A.size() , nb = B.size(); // num elems in A and B
-    int psa{0}, psb{0}; // rolling path sums
-    
+    int psuma{0}, psumb{0}; // rolling path sums
     
     int i{0}, j{0}; // two ptrs
     while ((i < na) && (j < nb)) {
-        //cout << "psa = " << psa << " psb = " << psb << " mps = " << mps << endl;
         if (A[i] < B[j]) {
-            psa += A[i++]; // update path sum and bump pointer
+            psuma += A[i++]; // update path sum and bump pointer
         } else if (A[i] == B[j]) {
-            // add the max local path so far to mps
-            mps += max(psa, psb);
-            //cout << "psa = " << psa << " psb = " << psb << " mps = " << mps << endl;
-            // junction reset sums
-            psa = psb = 0;
+            // add the max local path so far to mpsum
+            mpsum += max(psuma, psumb);
+            // at junction reset sums
+            psuma = psumb = 0;
             // move forward and update path sums we need to account for the junction point
             if (i < na) {
-                psa += A[i++];
+                psuma += A[i++];
             }
             if (j < nb) {
-                psb += B[j++];
+                psumb += B[j++];
             }
         } else {
-            psb += B[j++];
+            psumb += B[j++];
         }
-        
     }
     
     // in case of differing lengths we have to account for trailing elements
     while (i < na){
         assert(i < na);
-        psa += A[i++];
+        psuma += A[i++];
     }
-     
     while (j < nb){
         assert(j < nb);
-        psb += B[j++];
+        psumb += B[j++];
     }
     
     // this will also take care of no junction case
-    mps += max(psa, psb);
-    
-    return mps;
+    mpsum += max(psuma, psumb);
+    return mpsum;
 }
 
 int main() {
