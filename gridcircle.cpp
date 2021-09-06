@@ -6,7 +6,9 @@
 #include <cmath>
 
 using namespace std;
-
+// A,B is diagonal end co-ordinate of a 0,0 based rect
+// D is radius of circles 
+// E[]F[] hold the co-ordinates of each circle 
 string solve(int A, int B, int C, int D, vector<int> &E, vector<int> &F) {
     pair<int, int> start{0, 0}, end{A, B};
     vector<vector<int>> grid(A + 1, vector<int>(B + 1, 0));
