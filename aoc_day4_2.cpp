@@ -57,7 +57,7 @@ int main() {
 	parse(draws, grids, row_col_counts, marked);
 
 	int ans{0};
-    unordered_map<int, bool> won; 
+	unordered_map<int, bool> won; 
 	// Run the draw now
 	for (auto d : draws) {
 		for (auto &m : marked[d]) {
@@ -73,8 +73,8 @@ int main() {
 			rc_count[1][col]++;
 
 			if (!won[grid_num] and (rc_count[0][row] == 5 || rc_count[1][col] == 5)) {
-                ans = 0;
-                won[grid_num] = true;
+				ans = 0;
+				won[grid_num] = true;
 				cout << "Ans Grid Num = " << grid_num << " Num = " << d  << endl;
 				for (auto r : g) {
 					for (auto c : r) {
