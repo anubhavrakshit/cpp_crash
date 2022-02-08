@@ -18,14 +18,13 @@ void permute(string& input, string& choosen) {
         choosen += ch;
         permute(input, choosen);
         choosen.pop_back();
-        input = ch + input;
+        input.insert(i, 1, ch);
     }
 }
 
 int main() {
-    string input{"LMNOPQ"};
+    string input{"ABCDEFGHIJKL"};
     string chosen;
-
     permute(input, chosen);
     return 0; 
 }
