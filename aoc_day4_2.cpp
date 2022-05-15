@@ -49,6 +49,7 @@ void parse(vector<int> &draws, vector<grid> &grids, vector<grid> &row_col_counts
 		grid_num++;
 	}
 }
+
 int main() {
 	vector<int> draws;
 	vector<grid> grids;
