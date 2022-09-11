@@ -51,12 +51,11 @@ int main() {
             next_gen[6] += cur_gen[0];                        
         }
 
-        // Copy the next_gen to cur_gen and clear next_gen 
-        for (int i = 0; i < 9; i++) {
-            cur_gen[i] = next_gen[i];
-            next_gen[i] = 0;
-        }
-
+        // Copy the next_gen to cur_gen and clear next_gen
+        cur_gen = next_gen;
+        for (auto &f : next_gen) {
+            f = 0;
+        
         // Debug traces 
         cout << "Day " << day << " ";
         for (auto age : cur_gen) {
